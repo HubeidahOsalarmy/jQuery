@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./code.jquery.com_jquery-3.7.0.min.js"></script>
+</head>
+<body> 
+    <!--To connect JQuery to your file, you add a script element to the beginning of your body tag and you add line 28,45 without line 29-44 inside, you can add one after other as you proceed-->
+    <!--Line 29 is added to make all the button element bounce(by element)-->
+    <!--Line 30 is added to make all element with class well shake(by class)-->
+    <!--Line 31 is added to fadeout elements with id target3(by id)-->
+    <!--Line 32 will make element with id target1 shake and change its color-->
+    <!--Line 33 will revove btn-default class from element button-->
+    <!--Line 34 will change the color of its target-->
+    <!--Line 35 is used to disable a button using id or class-name-->
+    <!--Line 36 will emphasize the text in the element tag by id name without altering other text-->
+    <!--Line 37 to remove an html element-->
+    <!--Line 38 is used to append from one element to another-->
+    <!--Line 39 to copy an element or clone and append-->
+    <!--Line 40 to target the parent of an html element-->
+    <!--Line 41 to target the children of an element-->
+    <!--Line 42 to target a particular child of a parent-->
+    <!--Line 43 to target even element -->
+    <!--Line 44 to modify the entire page-->
+    <script>
+  $(document).ready(function() {
+  $("button").addClass("animated bounce");
+  $(".well").addClass("animated shake");
+  $("#target3").addClass("animated fadeOut");
+  $("#target1").addClass("animated shake btn-primary");
+  $("button").removeClass("btn-default");
+  $("#target1").css("color", "red");
+  $("#target1").prop("disabled", true);
+  $("#target4").html("<em>#target4</em>");
+  $("#target6").remove();
+  $("#target2").appendTo("#right-well");
+  $("#target5").clone().appendTo("#left-well");
+  $("#target1").parent().css("background-color", "red")
+  $("#right-well").children().css("color", "orange")
+  $(".target:nth-child(2)").addClass("animated bounce");
+  $(".target:even").addClass("animated shake");
+  $("body").addClass("animated hinge");
+  });
+</script>
+
+<!-- Only change code above this line -->
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
